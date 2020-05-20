@@ -26,46 +26,46 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_admin` (IN `_id` INT, IN `_first_name` VARCHAR(255), IN `_last_name` VARCHAR(255), IN `_username` VARCHAR(255), IN `_phone_no` VARCHAR(255), IN `_email` VARCHAR(255), IN `_password` VARCHAR(255))  BEGIN
-	IF _id = 0 THEN
-    	INSERT INTO admin_reg(first_name,last_name,username,phone_no,email,password)
-        VALUES (_first_name,_last_name,_username,_phone_no,_email,_password);
+-- CREATE DEFINER=`root`@`buq2p4mksm9tfurz4nxo-mysql.services.clever-cloud.com` PROCEDURE `update_admin` (IN `_id` INT, IN `_first_name` VARCHAR(255), IN `_last_name` VARCHAR(255), IN `_username` VARCHAR(255), IN `_phone_no` VARCHAR(255), IN `_email` VARCHAR(255), IN `_password` VARCHAR(255))  BEGIN
+-- 	IF _id = 0 THEN
+--     	INSERT INTO admin_reg(first_name,last_name,username,phone_no,email,password)
+--         VALUES (_first_name,_last_name,_username,_phone_no,_email,_password);
         
-        SET _id = LAST_INSERT_ID();
-    ELSE
-    	UPDATE admin_reg
-        SET 
-        	first_name = _first_name,
-        	last_name = _last_name,
-            username = _username,
-            phone_no = _phone_no,
-            email = _email,
-            password = _password
-        WHERE id = _id;
-    END IF;
+--         SET _id = LAST_INSERT_ID();
+--     ELSE
+--     	UPDATE admin_reg
+--         SET 
+--         	first_name = _first_name,
+--         	last_name = _last_name,
+--             username = _username,
+--             phone_no = _phone_no,
+--             email = _email,
+--             password = _password
+--         WHERE id = _id;
+--     END IF;
         
-        SELECT _id AS 'id';
-  END$$
+--         SELECT _id AS 'id';
+--   END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_profile` (IN `_id` INT, IN `_first_name` VARCHAR(50), IN `_last_name` VARCHAR(50), IN `_phone_no` VARCHAR(10), IN `_email` VARCHAR(50), IN `_password` VARCHAR(50))  BEGIN
-	IF _id = 0 THEN
-    	INSERT INTO register(first_name,last_name,phone_no,email,password)
-        VALUES (_first_name,_last_name,_phone_no,_email,_password);
+-- CREATE DEFINER=`root`@`buq2p4mksm9tfurz4nxo-mysql.services.clever-cloud.com` PROCEDURE `update_profile` (IN `_id` INT, IN `_first_name` VARCHAR(50), IN `_last_name` VARCHAR(50), IN `_phone_no` VARCHAR(10), IN `_email` VARCHAR(50), IN `_password` VARCHAR(50))  BEGIN
+-- 	IF _id = 0 THEN
+--     	INSERT INTO register(first_name,last_name,phone_no,email,password)
+--         VALUES (_first_name,_last_name,_phone_no,_email,_password);
         
-        SET _id = LAST_INSERT_ID();
-    ELSE
-    	UPDATE register
-        SET 
-        	first_name = _first_name,
-        	last_name = _last_name,
-            phone_no = _phone_no,
-            email = _email,
-            password = _password
-        WHERE id = _id;
-    END IF;
+--         SET _id = LAST_INSERT_ID();
+--     ELSE
+--     	UPDATE register
+--         SET 
+--         	first_name = _first_name,
+--         	last_name = _last_name,
+--             phone_no = _phone_no,
+--             email = _email,
+--             password = _password
+--         WHERE id = _id;
+--     END IF;
         
-        SELECT _id AS 'id';
-  END$$
+--         SELECT _id AS 'id';
+--   END$$
 
 DELIMITER ;
 
