@@ -4,10 +4,10 @@ const express = require('express');
 
 const mysqlConn =mysql.createConnection({
 
-  host:'localhost',
-  user:'root',
-  password:'',
-  database:'icepweb',
+  host:'buq2p4mksm9tfurz4nxo-mysql.services.clever-cloud.com',
+  user:'uyvssygqtyvw9qhs',
+  password:'bKV7iMui6dKk2fCToeiH',
+  database:'buq2p4mksm9tfurz4nxo',
   multipleStatements: true
 
 })
@@ -15,18 +15,13 @@ const mysqlConn =mysql.createConnection({
 
 mysqlConn.connect((err)  =>{
 
-if(!err)
+  if(!err){
+    console.log('db connection succeed');
 
-console.log('db connection succeed');
-
-
-else
-
-
-console.log('db connection failed');
-
-
+  }else{
+    console.log('db connection failed');
+    console.log(err);
+  }
 });
-
 
 module.exports =mysqlConn;

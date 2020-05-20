@@ -31,7 +31,7 @@ const  db = require('../conn/conn');
             var myQuery = "INSERT INTO applicantinfo SET ?";
             db.query(myQuery, [post], function(err, results, fields){
                 if(err){
-                    
+                    console.log(err);
                     res.send({
                         data : err,
                         code : 400,
